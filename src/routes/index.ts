@@ -8,6 +8,10 @@ router.use(cors({ origin: "*" }));
 
 const productController = container.get<ProductController>("ProductController");
 
+router.get("/health", (_, res) => {
+  res.status(200).json({ status: "ok", timestamp: new Date().toISOString() });
+});
+
 router.post("/product/create", async (req, res) => {
   try {
     const body = req.body;
