@@ -75,5 +75,4 @@ jobs:
               -e DB_PORT=3306 \
               -e DB_USER=${{ secrets.DB_USER_PRODUTOS }} \
               -e DB_PASSWORD=${{ secrets.DB_PASSWORD_PRODUTOS }} \
-              -e DB_DATABASE=produtos-service \
               dougb60/produtos-service:latest
