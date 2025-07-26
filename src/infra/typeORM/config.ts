@@ -7,11 +7,11 @@ import "dotenv/config";
 
 export const AppDataSource = new DataSource({
   type: "mysql",
-  host: process.env.DB_HOST || "localhost",
+  host: process.env.DB_HOST_PRODUTOS || "localhost",
   port: 3306,
-  username: process.env.DB_USER,
-  password: process.env.DB_PASSWORD,
-  database: process.env.DB_DATABASE || "soat_desafio",
+  username: process.env.DB_USER_PRODUTOS,
+  password: process.env.DB_PASSWORD_PRODUTOS,
+  database: process.env.DB_DATABASE || "produtos_service",
   logging: true,
   synchronize: false,
   entities: [CategoryEntity, ProductEntity],
