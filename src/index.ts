@@ -7,10 +7,13 @@ import { routes } from "./routes";
 import "dotenv/config";
 
 async function main() {
-  const port = process.env.PORT ? parseInt(process.env.PORT, 10) : 3000;
+  const port = process.env.PORT ? parseInt(process.env.PORT, 10) : 3002;
   try {
     await AppDataSource.initialize();
     console.log("Data base running...");
+
+    await AppDataSource.runMigrations();
+    console.log("Migrations executed...");
 
     const app = express();
     app.use(express.json());
